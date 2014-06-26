@@ -1,4 +1,8 @@
 #org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+<<<<<<< HEAD
 #Thu Jun 26 15:01:33 CEST 2014
+=======
+#Thu Jun 26 14:26:47 CEST 2014
+>>>>>>> branch 'master' of ssh://git@github.com/Rayuku/GenericRandomGame.git
 org.springsource.ide.eclipse.gradle.linkedresources=
 org.springsource.ide.eclipse.gradle.rootprojectloc=..

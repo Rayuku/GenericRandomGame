@@ -1,5 +1,9 @@
 #org.springsource.ide.eclipse.gradle.core.actions.GradleRefreshPreferences
+<<<<<<< HEAD
 #Thu Jun 26 15:01:32 CEST 2014
+=======
+#Thu Jun 26 14:26:47 CEST 2014
+>>>>>>> branch 'master' of ssh://git@github.com/Rayuku/GenericRandomGame.git
 addResourceFilters=true
 afterTasks=afterEclipseImport;
 beforeTasks=cleanEclipse;eclipse;
