@@ -4,9 +4,18 @@ import GenericGameStudios.GenericRandomGame.Screens.MainMenuScreen;
 import com.badlogic.gdx.Game;
 
 public class GenericRandomGame extends Game{
+	
+	private MainMenuScreen mainMenuScreen;
+	
 	@Override
 	public void create() {
-		this.setScreen(new MainMenuScreen());
+		mainMenuScreen = new MainMenuScreen(this);
+		this.setScreen(mainMenuScreen);
+	}
+	
+	public void createGame(){
+		//create Stuff when Start game button is pressed
+		System.out.println("CreatingGame...");
 	}
 
 	@Override

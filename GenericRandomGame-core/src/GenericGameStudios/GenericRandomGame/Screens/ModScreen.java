@@ -27,9 +27,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
 public class ModScreen implements Screen {
 	
+	private MainMenuScreen mainMenuScreen;
+	
 	private Skin skin;
 	private Stage stage;
-	private SpriteBatch batch;
 	private BitmapFont font;
 	
 	private TextureAtlas buttonAtlas;
@@ -55,18 +56,19 @@ public class ModScreen implements Screen {
 	
 	private Label label;
 	private CheckBox box;
-	private TextButton back;
+	private TextButton button;
 	private TextField modDescription;
 	
 	private ChangeListener backListener = new ChangeListener(){
 		@Override
 		public void changed(ChangeEvent event, Actor actor) {
-			((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenuScreen());
+			mainMenuScreen.create();
+			((Game) Gdx.app.getApplicationListener()).setScreen(mainMenuScreen);
 		}
 	};
 	
-	public ModScreen(){
-		create();
+	public ModScreen(MainMenuScreen mainMenuScreen){
+		this.mainMenuScreen = mainMenuScreen;
 	}
 	
 	public void create(){
@@ -90,12 +92,12 @@ public class ModScreen implements Screen {
 	    modDescriptionTable.add(modDescriptionScrollPane).size(400,500);
 	    modDescriptionTable.row();
 	    
-	    back = new TextButton("Apply",buttonStyle);
-	    buttonTable.add(back).align(Align.bottom).size(90, 40).pad(10);
+	    button = new TextButton("Apply",buttonStyle);
+	    buttonTable.add(button).align(Align.bottom).size(90, 40).pad(10);
 	    
-	    back = new TextButton("Back",buttonStyle);
-	    back.addListener(backListener);
-	    buttonTable.add(back).align(Align.bottom).size(90, 40).pad(10);
+	    button = new TextButton("Back",buttonStyle);
+	    button.addListener(backListener);
+	    buttonTable.add(button).align(Align.bottom).size(90, 40).pad(10);
 	    
 	    modDescriptionTable.add(buttonTable).size(400, 50);
 	    mainTable.add(modDescriptionTable).height(580).align(Align.top).pad(10);
@@ -140,7 +142,6 @@ public class ModScreen implements Screen {
 	public void dispose() {
 		stage.dispose();
 		skin.dispose();
-		batch.dispose();
 	}
 	
 	private void initDrawables(){

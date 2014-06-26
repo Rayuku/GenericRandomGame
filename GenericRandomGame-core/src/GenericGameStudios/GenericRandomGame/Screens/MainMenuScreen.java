@@ -1,6 +1,8 @@
 package GenericGameStudios.GenericRandomGame.Screens;
 
 
+import GenericGameStudios.GenericRandomGame.Main.GenericRandomGame;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -18,6 +20,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
 public class MainMenuScreen implements Screen{
 	
+	private GenericRandomGame game;
+	
+	private ModScreen modScreen;
+	private OptionsScreen optionsScreen;
+	
 	private Skin skin;
 	private Stage stage;
 	private SpriteBatch batch;
@@ -30,10 +37,27 @@ public class MainMenuScreen implements Screen{
 	private TextButton mods;
 	private TextButton endGame;
 	
+	private ChangeListener startGameListener = new ChangeListener(){
+		@Override
+		public void changed(ChangeEvent event, Actor actor) {
+			game.createGame();
+			((Game) Gdx.app.getApplicationListener()).setScreen((Screen) game);
+		}
+	};
+	
+	private ChangeListener optionsListener = new ChangeListener(){
+		@Override
+		public void changed(ChangeEvent event, Actor actor) {
+			optionsScreen.create();
+			((Game) Gdx.app.getApplicationListener()).setScreen(optionsScreen);
+		}
+	};
+	
 	private ChangeListener modsListener = new ChangeListener(){
 		@Override
 		public void changed(ChangeEvent event, Actor actor) {
-			((Game) Gdx.app.getApplicationListener()).setScreen(new ModScreen());
+			modScreen.create();
+			((Game) Gdx.app.getApplicationListener()).setScreen(modScreen);
 		}
 	};
 	
@@ -44,8 +68,11 @@ public class MainMenuScreen implements Screen{
 		}
 	};
 	
-	public MainMenuScreen(){
+	public MainMenuScreen(GenericRandomGame game){
+		this.game = game;
 		create();
+		modScreen = new ModScreen(this);
+		optionsScreen = new OptionsScreen(this);
 	}
 	
 	public void create(){
@@ -64,8 +91,10 @@ public class MainMenuScreen implements Screen{
 	    style.font = font;
 	    
 	    startGame = new TextButton("Start Game",style);
+	    startGame.addListener(startGameListener);
 	    
         options = new TextButton("Options",style);
+        options.addListener(optionsListener);
         
         mods = new TextButton("Mods",style);
         mods.addListener(modsListener);
