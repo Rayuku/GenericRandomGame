@@ -5,7 +5,7 @@ import com.badlogic.gdx.Screen;
 public class OptionsScreen implements Screen{
 
 	public void create(){
-		System.out.println("Hello");
+		
 	}
 	
 	@Override
