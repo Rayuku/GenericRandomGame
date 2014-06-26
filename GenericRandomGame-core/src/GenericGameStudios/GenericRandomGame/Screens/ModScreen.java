@@ -1,17 +1,5 @@
 package GenericGameStudios.GenericRandomGame.Screens;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.jar.JarFile;
-import java.util.zip.ZipEntry;
-
-import javax.swing.JOptionPane;
-
-import GenericGameStudios.GenericRandomGame.Items.Item;
-
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -36,7 +24,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField.TextFieldStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry.Entry;
 
 public class ModScreen implements Screen {
 	
