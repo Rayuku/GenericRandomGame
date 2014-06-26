@@ -4,6 +4,10 @@ import com.badlogic.gdx.Screen;
 
 public class OptionsScreen implements Screen{
 
+	public void create(){
+		
+	}
+	
 	@Override
 	public void render(float delta) {
 		
