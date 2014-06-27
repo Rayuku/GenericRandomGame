@@ -1,16 +1,11 @@
 package GenericGameStudios.GenericRandomGame.Main;
 
-import GenericGameStudios.GenericRandomGame.Screens.MainMenuScreen;
 import com.badlogic.gdx.Game;
 
 public class GenericRandomGame extends Game{
 	
-	private MainMenuScreen mainMenuScreen;
-	
 	@Override
 	public void create() {
-		mainMenuScreen = new MainMenuScreen(this);
-		this.setScreen(mainMenuScreen);
 	}
 	
 	public void createGame(){
