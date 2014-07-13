@@ -3,12 +3,12 @@ package GenericGameStudios.GenericRandomGame.Main;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import GenericGameStudios.GenericRandomGame.Items.EquipableItem;
-import GenericGameStudios.GenericRandomGame.Items.EquipableItemType;
-import GenericGameStudios.GenericRandomGame.Items.Food;
-import GenericGameStudios.GenericRandomGame.Items.Item;
-import GenericGameStudios.GenericRandomGame.Items.Potion;
-import GenericGameStudios.GenericRandomGame.Items.Statistic;
+import GenericGameStudios.GenericRandomGame.Item.EquipableItem;
+import GenericGameStudios.GenericRandomGame.Item.EquipableItemType;
+import GenericGameStudios.GenericRandomGame.Item.Food;
+import GenericGameStudios.GenericRandomGame.Item.Item;
+import GenericGameStudios.GenericRandomGame.Item.Potion;
+import GenericGameStudios.GenericRandomGame.Item.Statistic;
 import GenericGameStudios.GenericRandomGame.Character.Character;
 import GenericGameStudios.GenericRandomGame.Main.World;
 
@@ -23,8 +23,7 @@ public class Player {
 	
 	private Statistic statistic;
 	
-	private long consumeTime;
-	private Food consuming;
+	private int x_Pos,y_Pos;
 	
 	private int currentHealth;
 	private int currentMana;
@@ -256,34 +255,6 @@ public class Player {
 			 drop_Item(item);
 	}
 	
-	public void consume_Item(Food food){
-		if(food instanceof Potion){
-			Potion p = (Potion) food;
-			if(p.getStats() != null)
-				statistics.add(p.getStats());
-			currentHealth += p.getHealing();
-			currentMana += p.getMana_reg();
-			update_Statistic();
-		}
-		consumeTime = System.currentTimeMillis()+food.getTime_period();
-	}
-	
-	public void update_Consuming(){
-		if(consuming != null){
-			if(consumeTime >= System.currentTimeMillis()){
-				if(consuming instanceof Potion){
-					Potion p = (Potion) consuming;
-					statistics.remove(p.getStats());
-				}
-				consuming = null;
-				consumeTime = 0;
-			}else if(!(consuming instanceof Potion)){
-				currentHealth += consuming.getHealing()/consuming.getTime_period();
-				currentMana += consuming.getMana_reg()/consuming.getTime_period();
-			}
-		}
-	}
-	
 	public void update_Statistic(){
 		
 		statistic.setAccuracy(0);
@@ -365,21 +336,5 @@ public class Player {
 
 	public void setStatistic(Statistic statistic) {
 		this.statistic = statistic;
-	}
-
-	public long getConsumeTime() {
-		return consumeTime;
-	}
-
-	public void setConsumeTime(long consumeTime) {
-		this.consumeTime = consumeTime;
-	}
-
-	public Food getConsuming() {
-		return consuming;
-	}
-
-	public void setConsuming(Food consuming) {
-		this.consuming = consuming;
 	}
 }

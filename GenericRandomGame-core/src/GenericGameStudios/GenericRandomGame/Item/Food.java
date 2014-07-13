@@ -1,4 +1,4 @@
-package GenericGameStudios.GenericRandomGame.Items;
+package GenericGameStudios.GenericRandomGame.Item;
 
 public abstract class Food extends NonEquipableItem{
 	

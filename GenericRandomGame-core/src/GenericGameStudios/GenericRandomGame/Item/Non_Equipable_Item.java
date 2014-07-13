@@ -1,10 +1,10 @@
-package GenericGameStudios.GenericRandomGame.Items;
+package GenericGameStudios.GenericRandomGame.Item;
 
-public abstract class NonEquipableItem extends Item{
+public abstract class Non_Equipable_Item extends Item{
 
 	private String effect;
 	
-	public NonEquipableItem(String name) {
+	public Non_Equipable_Item(String name) {
 		super(name);
 	}
 

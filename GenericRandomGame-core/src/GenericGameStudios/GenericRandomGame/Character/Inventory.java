@@ -2,7 +2,7 @@ package GenericGameStudios.GenericRandomGame.Character;
 
 import java.util.ArrayList;
 
-import GenericGameStudios.GenericRandomGame.Items.Item;
+import GenericGameStudios.GenericRandomGame.Item.Item;
 
 public class Inventory {
 	private ArrayList<Slot> slots;

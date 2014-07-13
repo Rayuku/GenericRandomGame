@@ -2,9 +2,8 @@ package GenericGameStudios.GenericRandomGame.Main;
 
 import java.awt.Point;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import GenericGameStudios.GenericRandomGame.Items.Item;
+import GenericGameStudios.GenericRandomGame.Item.Item;
 
 public class World {
 

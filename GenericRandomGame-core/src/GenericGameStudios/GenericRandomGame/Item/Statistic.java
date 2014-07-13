@@ -1,4 +1,4 @@
-package GenericGameStudios.GenericRandomGame.Items;
+package GenericGameStudios.GenericRandomGame.Item;
 
 public class Statistic {
 	private int physique;

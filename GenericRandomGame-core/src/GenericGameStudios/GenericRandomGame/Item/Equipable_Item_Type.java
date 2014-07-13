@@ -1,6 +1,6 @@
-package GenericGameStudios.GenericRandomGame.Items;
+package GenericGameStudios.GenericRandomGame.Item;
 
-public enum EquipableItemType {
+public enum Equipable_Item_Type {
 	Headgear,
 	Chest_Protector,
 	Bracer,
@@ -15,4 +15,5 @@ public enum EquipableItemType {
 	Bangle,
 	Ring,
 	Charm;
+	
 }

@@ -1,6 +1,6 @@
 package GenericGameStudios.GenericRandomGame.Character;
 
-import GenericGameStudios.GenericRandomGame.Items.Item;
+import GenericGameStudios.GenericRandomGame.Item.Item;
 
 
 public class Slot {

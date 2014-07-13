@@ -1,16 +1,19 @@
 package GenericGameStudios.GenericRandomGame.Main;
 
+import GenericGameStudios.GenericRandomGame.Loader.ItemLoader;
+
 import com.badlogic.gdx.Game;
 
 public class GenericRandomGame extends Game{
 	
 	@Override
 	public void create() {
+		ItemLoader loader = new ItemLoader();
+		loader.loadItemsFolder();
+		//System.out.println(loader.getExistingItems().get(0).getName());
 	}
 	
 	public void createGame(){
-		//create Stuff when Start game button is pressed
-		System.out.println("CreatingGame...");
 	}
 
 	@Override
