@@ -1,4 +1,8 @@
-package GenericGameStudios.GenericRandomGame.Items;
+package GenericGameStudios.GenericRandomGame.Items.Items;
+
+import GenericGameStudios.GenericRandomGame.Items.EquipableItem;
+import GenericGameStudios.GenericRandomGame.Items.EquipableItemType;
+import GenericGameStudios.GenericRandomGame.Items.Rarity;
 
 public class Item_BadGremlinSlipper extends EquipableItem{
 
