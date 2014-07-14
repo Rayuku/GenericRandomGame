@@ -18,7 +18,7 @@ public class ItemLoader {
 		existingItems = new ArrayList<Item>();
 	}
 	
-	public void loadItemsJar(){
+	public void loadItems(){
 		try{
 			String path = (String)Item.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 			JarFile jar = new JarFile(path);
@@ -38,7 +38,7 @@ public class ItemLoader {
 	/**
 	 * Only for Development
 	 */
-	public void loadItemsFolder(){
+	public void loadItemsDevelop(){
 		try{
 			String path = (String)Item.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 			path += "GenericGameStudios/GenericRandomGame/Items/Items";

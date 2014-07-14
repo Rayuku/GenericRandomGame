@@ -9,7 +9,7 @@ public class GenericRandomGame extends Game{
 	@Override
 	public void create() {
 		ItemLoader loader = new ItemLoader();
-		loader.loadItemsFolder();
+		loader.loadItemsDevelop();
 		//System.out.println(loader.getExistingItems().get(0).getName());
 	}
 	
