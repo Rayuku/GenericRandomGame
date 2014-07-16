@@ -23,15 +23,15 @@ public class ItemLoader {
 			String path = (String)Item.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 			JarFile jar = new JarFile(path);
 			for(JarEntry entry : Collections.list(jar.entries())){
-				if(entry.getName().startsWith("GenericGameStudios/GenericRandomGame/Items/Items/Item_")){
-					String itemClassName = entry.getName().replace("/", ".").replace(".class", "");
-					Class itemClass = Class.forName(itemClassName);
+				if(entry.getName().startsWith("GenericGameStudios/GenericRandomGame/Item/Items/Item_")){
+					Class<?> itemClass = Class.forName("GenericGameStudios.GenericRandomGame.Item.Items." + entry.getName().replace(".class", ""));
 					Item item = (Item) itemClass.newInstance();
 					existingItems.add(item);
+				}
 			}
-		}
+			jar.close();
 		}catch (Exception e){
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Test Titel", JOptionPane.OK_CANCEL_OPTION);
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.OK_CANCEL_OPTION);
 		}
 	}
 	
@@ -41,17 +41,17 @@ public class ItemLoader {
 	public void loadItemsDevelop(){
 		try{
 			String path = (String)Item.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-			path += "GenericGameStudios/GenericRandomGame/Items/Items";
+			path += "GenericGameStudios/GenericRandomGame/Item/Items";
 			File file = new File(path);
 			for(File entry : file.listFiles()){
 				if(entry.getName().startsWith("Item_")){
-					Class ItemClass = Class.forName(entry.getName().replace(".class", "").replace("Item_", ""));
+					Class<?> ItemClass = Class.forName("GenericGameStudios.GenericRandomGame.Item.Items." + entry.getName().replace(".class", ""));
 					Item item = (Item) ItemClass.newInstance();
-					System.out.println(item.getName());
+					existingItems.add(item);
 				}
 			}
 		}catch (Exception e){
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Test Titel", JOptionPane.OK_CANCEL_OPTION);
+			e.printStackTrace();
 		}
 	}
 

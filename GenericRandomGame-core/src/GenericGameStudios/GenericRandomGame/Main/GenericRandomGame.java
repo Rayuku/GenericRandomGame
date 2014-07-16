@@ -1,5 +1,6 @@
 package GenericGameStudios.GenericRandomGame.Main;
 
+import GenericGameStudios.GenericRandomGame.Item.Item;
 import GenericGameStudios.GenericRandomGame.Loader.ItemLoader;
 
 import com.badlogic.gdx.Game;
@@ -10,7 +11,8 @@ public class GenericRandomGame extends Game{
 	public void create() {
 		ItemLoader loader = new ItemLoader();
 		loader.loadItemsDevelop();
-		//System.out.println(loader.getExistingItems().get(0).getName());
+		for(Item i : loader.getExistingItems())
+			System.out.println(i.getName());
 	}
 	
 	public void createGame(){
