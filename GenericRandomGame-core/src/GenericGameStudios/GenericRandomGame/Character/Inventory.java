@@ -14,7 +14,16 @@ public class Inventory {
 			slots.add(new Slot());
 	}
 	
+	/**
+	 * Checks if the item is already in the inventory or a slot free 
+	 * and inserts it the inventory.(return true)
+	 * else return false
+	 * @param item
+	 * @return
+	 */
 	public boolean insert_Into_Inventory(Item item){
+		//is the item already in the inventory
+		//is the stack size not full
 		for(Slot slot : slots){
 			if(slot.getItem() == item && slot.getStack_Count() < item.getMax_Stack_Count()){
 				slot.setStack_Count(slot.getStack_Count()+1);

@@ -40,6 +40,11 @@ public class Player {
 		currentMana = statistic.getMana();
 	}
 	
+	/**
+	 * Checks if one or more Items are in a 30 px radius around the player
+	 * and packs the item/s into the players inventory.
+	 */
+	
 	public void pickup_Item(){
 		ArrayList<Point> tmp_Point = new ArrayList<Point>();
 		ArrayList<Item> tmp_Item = new ArrayList<Item>();
